@@ -1,0 +1,13 @@
+.spinner-div {
+    background: transparent;
+    min-height: 45vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.spinners {
+    width: 3rem;
+    height: 4rem;
+}

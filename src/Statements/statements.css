@@ -1,0 +1,31 @@
+.stat-table {
+    /* background: #292929dc; */
+    /* font-weight: bold; */
+    color: white;
+    border: none;
+}
+.stat-table thead th {
+    border: none
+}
+.stat-table th {
+    border: none;
+}
+.stat-table tr {
+    border: none;
+    /* background-color: red; */
+    padding-left: 20px;
+}
+.stat-table td {
+    border: none;
+}
+
+.table td, .table th {
+    padding-left: 10px;
+    padding-right: 12px;
+}
+#first-row-statement {
+    /* background-color: yellow; */
+    margin-left: 20px;
+  
+
+}

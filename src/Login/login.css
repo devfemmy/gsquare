@@ -1,0 +1,91 @@
+.login-wrapper {
+    background-color: #000075;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    /* justify-content: center; */
+    font-size: calc(10px + 2vmin);
+    color: white;
+}
+.logo-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding-top: 10%;
+}
+.login-logo {
+    /* width: 200vmin; */
+    width : 80vmin;
+    height: 100px;
+}
+.login-details {
+    padding-top: 18%;
+    padding-right: 10%;
+    padding-left: 10%;
+    
+}
+.login-details h2 {
+    color: white;
+    text-align: left;
+    font-size: 40px;
+    margin-bottom: 6px;
+}
+.login-details p {
+    font-size: 15px;
+    opacity: 0.5;
+}
+.login-details h5 {
+    margin-top: 15px;
+    font-size: 20px;
+    text-align: center;
+
+}
+.login-details .input-group-text {
+    padding: 0 !important;
+    border: none;
+    border-bottom: 1px solid #fff;
+    border-radius: 0px;
+    background: transparent !important;
+ 
+}
+
+.login-details .form-control {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #fff;
+    color: white;
+
+}
+.login-details .form-control:focus {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    box-shadow: none;
+    caret-color: white;
+    color: white;
+    font-size: 15px;
+    opacity: 1;
+
+}
+.login-input {
+    margin-bottom: 20px;
+}
+#password-icon{
+    color: white;
+    opacity: 0.5;
+    cursor: pointer;
+}
+.login-button {
+    margin-top: 18px;
+    width: 100%;
+    color: black !important;
+    height: 50px;
+    font-size: 18px !important;
+    font-weight: bold !important;
+    background-color: white !important;
+    border-radius: 50px !important;
+
+}

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="118.93" height="23" viewBox="0 0 118.93 23">
+  <g id="logo" transform="translate(-2 16.224)">
+    <text id="Grand" transform="translate(2 0.776)" fill="#fff" font-size="16" font-family="Poppins-Bold, Poppins" font-weight="700" letter-spacing="-0.05em"><tspan x="0" y="0">Grand</tspan></text>
+    <text id="Square" transform="translate(68.93 0.248)" fill="#fff" font-size="15" font-family="Poppins-Bold, Poppins" font-weight="700" letter-spacing="-0.05em"><tspan x="0" y="0">Square</tspan></text>
+    <rect id="Rectangle_1" data-name="Rectangle 1" width="10.679" height="10.679" transform="translate(59.983 -11.163) rotate(45)" fill="#fff"/>
+  </g>
+</svg>

@@ -1,0 +1,59 @@
+.profile-wrapper {
+    background-color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    /* justify-content: center; */
+    font-size: calc(10px + 2vmin);
+    color: black;
+}
+.profile-div {
+    padding-top: 24px;
+    padding-left: 32px;
+    padding-right: 32px;
+}
+.profile-group {
+    margin-bottom: 22px;
+}
+.profile-input {
+    background: #292929;
+    background: none !important;
+    border: none !important;
+    color:#fff;
+    font-size:1.3rem ;
+    border-bottom: 1px solid black !important;
+    transition:all .2s ease-in;
+    caret-color: #DA0000;
+    border-radius: 0px !important;
+
+  }
+  .profile-input:focus {
+    background: none;
+    border: none;
+    color:#fff;
+    outline: none;
+    border-radius: 0px !important;
+    box-shadow: none !important;
+    border-bottom: 2px solid #DA0000 !important;
+
+  }
+  #date-picker {
+      color: black;
+      font-size: 18px;
+      width: 183%;
+  }
+  .profile-btn-div {
+      padding-left: 32px;
+      padding-right: 32px;
+  }
+  .profile-btn {
+      position: absolute;
+      background-color: #000075 !important;
+      bottom: 60px;
+      font-size: 18px !important;
+      font-weight: bold !important;
+      border-radius: 50px !important;
+      height: 50px;
+      width: 85%;
+  }
