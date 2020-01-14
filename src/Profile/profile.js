@@ -26,6 +26,7 @@ class Profile extends Component {
             token: localStorage.getItem('grandToken')
         }
         // axios.get('/profile')
+        // axios.get('profile', data)
         axios.post('bheerhugz_api_get.php?api_endpoint=profile', data)
         .then(res => {
             const response = res.data.response;
@@ -58,6 +59,7 @@ class Profile extends Component {
             country_id: this.state.country_id,
             phone_no: document.querySelector('#phone').value
         }
+        //   axios.post('profile', data,)
           axios.post('bheerhugz_api_post.php?api_endpoint=profile', data,)
           .then(res => {
               console.log(res)

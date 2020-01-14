@@ -19,6 +19,7 @@ class ChangePassword extends Component {
             current_password: document.querySelector('#password').value,
             new_password: document.querySelector("#new_password").value
         }
+        // axios.post('change_password', data)
         axios.post('bheerhugz_api_post.php?api_endpoint=change_password', data)
         .then(res => {
             const response = res.data.response;

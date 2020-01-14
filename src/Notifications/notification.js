@@ -18,6 +18,7 @@ class Notification extends Component {
      }
     componentDidMount () {
         const token = localStorage.getItem('grandToken');
+        // axios.get('notifications', {token})
         axios.post('bheerhugz_api_get.php?api_endpoint=notifications', {token})
         .then(res => {
             const response = res.data.response;
@@ -41,6 +42,7 @@ class Notification extends Component {
      deleteNotification = (data) => {
       
         const token = localStorage.getItem('grandToken');
+        // axios.post(`notifications/${data}`, {token})
         axios.post(`api_post.php?api_endpoint=notifications/${data}`, {token})
         .then(res => {
             console.log(res)

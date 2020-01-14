@@ -20,6 +20,7 @@ class Statements extends Component {
           
 
         }
+        // axios.post('statement', data)
         axios.post('bheerhugz_api_post.php?api_endpoint=statement', data)
         .then(res => {
             const response = res.data.response;
@@ -49,7 +50,7 @@ class Statements extends Component {
                             return (
                                 <tbody key = {statement.Transaction_type_id}>
                                     <tr>
-                                    <th  scope="row">{statement.Transaction_date}</th>
+                                    <th  scope="row">{statement.Transaction_date.slice(0, 10)}</th>
                                     <td>{statement.Transaction_type}</td>
                                     <td>{statement.Description}</td>
                                     <td>{statement.Points_gained}</td>
