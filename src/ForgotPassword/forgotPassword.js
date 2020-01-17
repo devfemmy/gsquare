@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './forgotPassword.css';
 import logo from '../assets/logo.svg';
+import arrowBack from '../assets/arrow-back-white.svg';
 import { InputGroup,  Input, Button, Label } from 'reactstrap';
 
 class ForgotPassword extends Component {
@@ -10,11 +11,20 @@ class ForgotPassword extends Component {
             pathname: '/home'
         })
     }
+    goBack = () => {
+        this.props.history.goBack()
+    }
     render() { 
         return ( 
             <div className= "password-wrapper">
+                <div>
+                <img onClick= {this.goBack} src={arrowBack} className= "arrowback" alt= "arrow"/>
+                </div>
                 <div className= "logo-wrapper">
+                <div>
                 <img src={logo} className="login-logo" alt="logo" />
+                </div>
+               
                 </div>
                 <div className= "password-details">
                     <h1>

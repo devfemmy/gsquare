@@ -17,14 +17,14 @@ class SideDrawer extends Component {
             attachedClasses =  ["SideDrawer", "Open" ];
         }
         return (
-            <div>
+            <div onTouchMove= {this.props.closed}>
                 <Backdrop show = {this.props.open} clicked = {this.props.closed}/>
                 
                 <div className = {attachedClasses.join(' ')}>
                     <div className= "logo-container">
                         <img className= "sidelogo" src= {sidelogo} alt= "sidelogo"/>
                     </div>
-                    <div className= "universal-pad2">
+                    <div  className= "universal-pad2">
                         <NavigationItems />
                  
                     </div>

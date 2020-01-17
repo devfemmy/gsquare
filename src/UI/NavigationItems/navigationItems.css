@@ -8,9 +8,7 @@
     height: 100%;
     overflow: scroll;
 }
-#side-logout {
-    margin-top: 186px;
-}
+
 
 
 @media (min-width: 500px) {

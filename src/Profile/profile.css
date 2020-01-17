@@ -20,7 +20,7 @@
     background: #292929;
     background: none !important;
     border: none !important;
-    color:#fff;
+    color: black !important;
     font-size:1.3rem ;
     border-bottom: 1px solid black !important;
     transition:all .2s ease-in;
@@ -31,7 +31,7 @@
   .profile-input:focus {
     background: none;
     border: none;
-    color:#fff;
+    color:black;
     outline: none;
     border-radius: 0px !important;
     box-shadow: none !important;

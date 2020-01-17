@@ -18,7 +18,7 @@ sideDrawerToggleHandler = () => {
 }
   render () {
     return (
-      <div className= "menu-div">
+      <div id= "sticky_header" className= "menu-div">
         <SideDrawer
            open = {this.state.showSideDrawer}
            closed = {this.sideDrawerToggleHandler}

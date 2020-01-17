@@ -22,7 +22,7 @@ class Home extends Component {
         return ( 
           
             <div className= "home-page">
-                <Headers name = {headerName} />
+                <Headers id= "sticky-header" name = {headerName} />
                 <div className= "home-details">
                     <div className= "home-bg">
                         <div>
