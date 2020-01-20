@@ -56,7 +56,7 @@ class Statements extends Component {
                     const newMonth = month[mm]
                     const year = date.getFullYear();
                     const displayDate = `${newMonth} ${day}, ${year}`
-                    if (statement.Points_used) {
+                    if (statement.Points_gained !== "-") {
                        return (
                         <div key= {index} className= "display-statement2">
                         <Row>
@@ -92,7 +92,7 @@ class Statements extends Component {
                        ) 
                     }else {
                         return (
-                            <div className= "display-statement">
+                            <div key= {index} className= "display-statement">
                             <Row>
                                 <Col xs= "8" sm= "8">
                                     <p className= "bold-text">{statement.Transaction_type}</p>
