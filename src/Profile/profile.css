@@ -41,7 +41,7 @@
   #date-picker {
       color: black;
       font-size: 18px;
-      width: 183%;
+      /* width: 183%; */
   }
   .profile-btn-div {
       padding-left: 32px;
