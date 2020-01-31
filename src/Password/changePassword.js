@@ -3,7 +3,7 @@ import Headers from '../Headers/headers';
 import {Input,Button,Alert, InputGroup} from 'reactstrap';
 import axios from '../axios-req'
 import Spinners from '../UI/Spinner/spinner';
-import errorHandler from '../ErrorHandler/errorHandler';
+// import errorHandler from '../ErrorHandler/errorHandler';
 
 class ChangePassword extends Component {
     state = { 
@@ -71,13 +71,16 @@ class ChangePassword extends Component {
                 </div>
             )
         }
-        return ( 
-            <div className = "paswrd-wrapper ">
+        return (
+        <div className= "page-container page">
+             <div className = "paswrd-wrapper ">
                 <Headers name= {"Change Password"} />
               {showPas}
             </div>
+        </div> 
+           
          );
     }
 }
  
-export default errorHandler (ChangePassword, axios);
+export default ChangePassword;

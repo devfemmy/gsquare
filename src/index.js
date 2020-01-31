@@ -2,14 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import {HashRouter} from 'react-router-dom'
+import {BrowserRouter as Router} from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import * as serviceWorker from './serviceWorker';
 
 const app = (
-    <HashRouter>
+    <Router>
         <App />
-    </HashRouter>
+    </Router>
 )
 
 ReactDOM.render(app, document.getElementById('root'));

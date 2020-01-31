@@ -6,7 +6,7 @@ import Headers from '../Headers/headers';
 import {Input, InputGroup, Button, Alert} from 'reactstrap';
 import axios from '../axios-req'
 import Spinners from '../UI/Spinner/spinner';
-import errorHandler from '../ErrorHandler/errorHandler';
+// import errorHandler from '../ErrorHandler/errorHandler';
 
 class Profile extends Component {
     state = { 
@@ -15,11 +15,16 @@ class Profile extends Component {
         state_id: null,
         country_id: null,
         city_id: null,
-        phone_no: null,
         loader: false,
         formSubmitted: false,
         statusMsg: null,
-        error: false
+        error: false,
+        firstName: null,
+        lastName: null,
+        email: null,
+        phone_no: null,
+        gender: ''
+       
      }
      componentDidMount() {
         const data = {
@@ -31,11 +36,18 @@ class Profile extends Component {
         .then(res => {
             const response = res.data.response;
             const profile = response.profile;
-            console.log("gg",response)
+            const firstname = profile.First_name;
+            const lastname = profile.Last_name;
+            // const phone = profile.Phone_no;
+            const email = profile.User_email_id;
             this.setState({current_address: profile.Current_address,
                 state_id: profile.State_id, country_id: 
                 profile.Country_id,
                 loader: true,
+                firstName: firstname,
+                lastName: lastname,
+                email: email,
+                profile: profile,
                 phone_no: profile.Phone_no, 
                 city_id: profile.City_id})
                 document.querySelector('#first_name').value = profile.First_name;
@@ -68,6 +80,7 @@ class Profile extends Component {
               if (response.status === 1) {
                  this.setState({loader: true, formSubmitted: true, statusMsg: message})
 
+
               }
           }).catch(
               err => {
@@ -80,6 +93,21 @@ class Profile extends Component {
           startDate: date
         });
       };
+     eventChanged = (event) => {
+        this.setState({lastName: event.target.value})
+     }
+     inputChanged = (event) => {
+        this.setState({firstName: event.target.value})
+     }
+     phoneChanged = (event) => {
+        this.setState({phone_no: event.target.value})
+     }
+     emailChanged = (event) => {
+        this.setState({email: event.target.value})
+     }
+     genderChanged = (event) => {
+        this.setState({gender: event.target.value})
+     }
     render() { 
         let AlertDisplay = null
         if(this.state.formSubmitted) {
@@ -99,26 +127,26 @@ class Profile extends Component {
                 <div className= "profile-div">
                 {AlertDisplay}
                 <InputGroup className= "profile-group">
-                <Input  id= "first_name" type= "text" className = "profile-input" placeholder="First Name" />
+                <Input value= {this.state.firstName} onChange= {this.inputChanged}  id= "first_name" type= "text" className = "profile-input" placeholder="First Name" />
                 </InputGroup>
                 <InputGroup className= "profile-group">
-                <Input  id= "last_name" type= "text" className = "profile-input" placeholder="Last Name" />
+                <Input value= {this.state.lastName} onChange= {this.eventChanged}   id= "last_name" type= "text" className = "profile-input" placeholder="Last Name" />
                 </InputGroup>
                 <InputGroup className= "profile-group">
-                <Input  id= "phone" type= "number" className = "profile-input" placeholder="Phone Number" />
+                <Input value= {this.state.phone_no} onChange= {this.phoneChanged}   id= "phone" type= "number" className = "profile-input" placeholder="Phone Number" />
                 </InputGroup>
                 <InputGroup className= "profile-group">
-                <Input  id= "email" type= "email" className = "profile-input" placeholder="Email Address" />
+                <Input value= {this.state.email} onChange= {this.emailChanged}   id= "email" type= "email" className = "profile-input" placeholder="Email Address" />
                 </InputGroup>
                 <InputGroup className= "profile-group">
-                <Input  id= "phone" type= "select" className = "profile-input" placeholder="Gender">
+                <Input value= {this.state.gender} onChange= {this.genderChanged}  id= "phone" type= "select" className = "profile-input" placeholder="Gender">
                     <option>Gender</option>
                     <option>Male</option>
                     <option>Female</option>
                 </Input>
                 </InputGroup>
                 <InputGroup className= "profile-group">
-                    <DatePicker id= "date-picker"
+                    <DatePicker type= "select" id= "date-picker"
                         className= "profile-input" 
                         placeholderText = "Date of Birth"
                         selected={this.state.startDate}
@@ -127,18 +155,21 @@ class Profile extends Component {
                 </InputGroup>
                 </div>
                 <div className= "profile-btn-div">
-                    <Button onClick= {this.saveProfile} className= "profile-btn">SAVE</Button>
+                    <Button onClick= {this.saveProfile} className= "profile-btn2">SAVE</Button>
                 </div>
                 </div>
             )
         }
-        return ( 
-            <div className= "profile-wrapper">
+        return (
+            <div className= "page-container page">
+                <div className= "profile-wrapper">
                 <Headers name = {"Profile"} />
                 {showProfile}
             </div>
+            </div> 
+            
          );
     }
 }
  
-export default errorHandler (Profile, axios);
+export default  Profile

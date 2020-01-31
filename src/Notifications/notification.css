@@ -15,6 +15,13 @@
         border-radius: 50%;
         display: inline-block;
 }
+.dot2 {
+    height: 10px;
+    width: 10px;
+    background-color: gold;
+    border-radius: 50%;
+    display: inline-block;
+}
 .table-dark td, .table-dark th, .table-dark thead th{
         margin-left: 50px;
         color: black;

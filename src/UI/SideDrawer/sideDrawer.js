@@ -3,7 +3,8 @@ import './sideDrawer.css';
 import '../../Login/login.css';
 import Backdrop from '../Backdrop/backdrop';
 import NavigationItems from '../NavigationItems/navigationItems';
-import sidelogo from '../../assets/logo.svg'
+import sidelogo from '../../assets/logo.svg';
+import {  Swipeable } from 'react-swipeable'
 
 // import logOut from '../../assets/logout.svg';
 
@@ -17,18 +18,20 @@ class SideDrawer extends Component {
             attachedClasses =  ["SideDrawer", "Open" ];
         }
         return (
-            <div onTouchMove= {this.props.closed}>
+            <div>
                 <Backdrop show = {this.props.open} clicked = {this.props.closed}/>
-                
-                <div className = {attachedClasses.join(' ')}>
-                    <div className= "logo-container">
-                        <img className= "sidelogo" src= {sidelogo} alt= "sidelogo"/>
+                <Swipeable onSwipedLeft={this.props.closed}>
+                    <div className = {attachedClasses.join(' ')}>
+                        <div className= "logo-container">
+                            <img className= "sidelogo" src= {sidelogo} alt= "sidelogo"/>
+                        </div>
+                        <div  className= "universal-pad2">
+                            <NavigationItems />
+                    
+                        </div>
                     </div>
-                    <div  className= "universal-pad2">
-                        <NavigationItems />
-                 
-                    </div>
-                </div>
+                </Swipeable>
+         
                 
             </div>
     

@@ -6,7 +6,7 @@ import password from '../assets/password.svg';
 import axios from '../axios-req';
 import { InputGroup, Alert, InputGroupAddon, InputGroupText, Input, Button} from 'reactstrap';
 import Spinners from '../UI/Spinner/spinner';
-import errorHandler from '../ErrorHandler/errorHandler';
+// import errorHandler from '../ErrorHandler/errorHandler';
 
 class LoginPage extends Component {
     state = {  
@@ -128,7 +128,8 @@ class LoginPage extends Component {
             )
         }
        
-        return ( 
+        return (
+            <div className= "page-container page">
             <div className = "login-wrapper">
                 <div className= "logo-wrapper">
                 <img src={logo} className="login-logo" alt="logo" />
@@ -137,8 +138,10 @@ class LoginPage extends Component {
               {showLogin}
               
             </div>
+            </div> 
+       
          );
     }
 }
  
-export default errorHandler (LoginPage, axios);
+export default LoginPage;

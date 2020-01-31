@@ -4,7 +4,7 @@ import './statements.css';
 import Headers from '../Headers/headers';
 import axios from '../axios-req';
 import Spinners from '../UI/Spinner/spinner';
-import errorHandler from '../ErrorHandler/errorHandler';
+// import errorHandler from '../ErrorHandler/errorHandler';
 
 class Statements extends Component {
     state = { 
@@ -58,7 +58,7 @@ class Statements extends Component {
                     const displayDate = `${newMonth} ${day}, ${year}`
                     if (statement.Points_gained !== "-") {
                        return (
-                        <div key= {index} className= "display-statement2">
+                        <div key= {index} className= "display-statement">
                         <Row>
                             <Col xs= "8" sm= "8">
                                 <p className= "bold-text4">{statement.Transaction_type}</p>
@@ -70,7 +70,7 @@ class Statements extends Component {
                         <Row>
                             <Col>
                             <p className= "bold-text2">Description:</p>
-                            </Col>
+                            </Col>\
                            
                         </Row>
                         <Row>
@@ -83,7 +83,7 @@ class Statements extends Component {
                         </Row>
                         <Row>
                             <Col>
-                                <h6>
+                                <h6 style= {{color: 'green'}}>
                                     {displayDate}
                                 </h6>
                             </Col>
@@ -133,12 +133,26 @@ class Statements extends Component {
             )
         }
         return ( 
-            <div className= "statement-wrapper">
+            <div className= "page-container page">
+                 <div className= "statement-wrapper">
                 <Headers style= {{paddingLeft: '3%'}} name = "Recent Transactions" />
                 {showTable}
+                <div className= "selling-big">
+                    <div className= "adeoye">
+
+                    </div>
+                    <div className= "adeoye">
+
+                    </div>
+                    <div className= "adeoye">
+
+                    </div>
+                </div>
             </div>
+            </div>
+           
          );
     }
 }
  
-export default errorHandler (Statements, axios);
+export default Statements;

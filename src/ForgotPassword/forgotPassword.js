@@ -16,6 +16,7 @@ class ForgotPassword extends Component {
     }
     render() { 
         return ( 
+            <div className= "page-container page">
             <div className= "password-wrapper">
                 <div>
                 <img onClick= {this.goBack} src={arrowBack} className= "arrowback" alt= "arrow"/>
@@ -39,6 +40,8 @@ class ForgotPassword extends Component {
                     <Button onClick= {this.ToNextPage} className= "password-button">RESEND PASSWORD</Button>
                 </div>
             </div>
+            </div>
+
          );
     }
 }

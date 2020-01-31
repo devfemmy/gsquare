@@ -8,6 +8,7 @@
     padding-top: 12px;
     padding-bottom: 12px;
     background-color: rgba(220, 222, 233, 0.301);
+    border-bottom: 1px solid rgba(0,0,0,.1);
 }
 .display-statement2 {
     /* margin-top: 10px; */
@@ -16,6 +17,7 @@
     padding-top: 12px;
     padding-bottom: 12px;
     background-color: #fff;
+    border-bottom: 1px solid rgba(0,0,0,.1);
 }
 .display-statement2 p {
     margin-bottom: 3px !important;
@@ -76,4 +78,11 @@
     margin-left: 20px;
   
 
+}
+.display-statement:nth-child(odd) {
+    background-color: white;
+}
+.display-statement:nth-child(even) {
+    background-color: rgba(220, 222, 233, 0.301);
+  
 }

@@ -6,7 +6,7 @@ import axios from '../axios-req'
 import Spinners from '../UI/Spinner/spinner';
 import backIcon from '../assets/back.svg';
 import SwipeToDelete from 'react-swipe-to-delete';
-import errorHandler from '../ErrorHandler/errorHandler';
+
 
 class Notification extends Component {
     state = { 
@@ -36,7 +36,16 @@ class Notification extends Component {
         this.setState({show: true, hide: false});
      }
     displayNotification = (data) => {
-        this.setState({hide: true, showData: data})
+        console.log("notification", data)
+        const token = localStorage.getItem('grandToken');
+        axios.post(`api_get.php?api_endpoint=notification/${data}/read`, {token})
+        .then(res => {
+            console.log(res)
+        }).catch(err=> {
+            console.log(err)
+        })
+
+        // this.setState({hide: true, showData: data})
         
      }
      deleteNotification = (data) => {
@@ -59,18 +68,32 @@ class Notification extends Component {
                   <Table className= "notification-table" >
                       {this.state.notification.map(
                           (notify, index) => {
-                            return(
-                                <tbody key = {index}>
-                                <SwipeToDelete onDelete={() => this.deleteNotification(notify.User_notification_id)}>
-                                    <tr onClick= {() => this.displayNotification(notify.Contents)} id = "third-row">
-                                    <td id= "first-data">{notify.Creation_date}</td>
-                                    <td id= "second-data">{notify.Transaction_type}</td>
-                                    <td id= "third-data"><span className= "dot"></span></td>
-                                    </tr> 
-                                </SwipeToDelete>
-                           
-                                </tbody>
-                            )
+                            if (notify.Note_open === 0) {
+                                return(
+                                    <tbody key = {index}>
+                                        <tr onClick= {() => this.displayNotification(notify.User_notification_id)} id = "third-row">
+                                        <td id= "first-data">{notify.Creation_date}</td>
+                                        <td id= "second-data">{notify.Transaction_type}</td>
+                                        <td id= "third-data"><span className= "dot"></span></td>
+                                        </tr> 
+                                
+                               
+                                    </tbody>
+                                )
+                            }else {
+                                return(
+                                    <tbody key = {index}>
+                                        <tr onClick= {() => this.displayNotification(notify.User_notification_id)} id = "third-row">
+                                        <td id= "first-data">{notify.Creation_date}</td>
+                                        <td id= "second-data">{notify.Transaction_type}</td>
+                                        <td id= "third-data"><span className= "dot2"></span></td>
+                                        </tr> 
+                                
+                               
+                                    </tbody>
+                                )
+                            }
+                      
                    
                           }
                       )}
@@ -87,13 +110,16 @@ class Notification extends Component {
               
             )
         }
-        return (  
-            <div className= "notification-wrapper">
-                  <Headers name = {"Notification"} />
-                {showNotification}
-            </div>
+        return ( 
+            <div className= "page-container page">
+                <div className= "notification-wrapper">
+                    <Headers name = {"Notification"} />
+                    {showNotification}
+                </div>
+            </div> 
+        
         );
     }
 }
  
-export default errorHandler (Notification, axios);
+export default Notification;

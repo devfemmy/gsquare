@@ -5,6 +5,7 @@ import Headers from '../Headers/headers';
 import { Card, CardBody, Col, Row } from 'reactstrap';
 import currentBalIcon from '../assets/current-bal-icon.svg'
 import pointsIcon from '../assets/points-gained-icon.svg'
+// import { NavLink } from "react-router-dom";
 
 class Home extends Component {
     state = {  }
@@ -20,8 +21,8 @@ class Home extends Component {
 
         const headerName = "Home"
         return ( 
-          
-            <div className= "home-page">
+          <div className= "page-container page">
+               <div className= "home-page">
                 <Headers id= "sticky-header" name = {headerName} />
                 <div className= "home-details">
                     <div className= "home-bg">
@@ -64,9 +65,12 @@ class Home extends Component {
                                 </Row>
                             </CardBody>
                         </Card>
+                       
                     </div>
                 </div>
             </div>
+          </div>
+           
          );
     }
 }
